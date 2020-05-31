@@ -1,0 +1,259 @@
+<html>
+<body>
+<pre>
+<h1>µVision2 Build Log</h1>
+<h2>Project:</h2>
+D:\dropit\AfterClassification\code\ai\lesson2_2.uv2
+Project File Date:  05/24/2020
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling lesson2_2.c...
+LESSON2_2.C(17): error C202: 'x': undefined identifier
+LESSON2_2.C(18): error C202: 'x': undefined identifier
+LESSON2_2.C(18): error C141: syntax error near ':'
+LESSON2_2.C(18): error C141: syntax error near ')'
+Target not created
+Build target 'Target 1'
+compiling lesson2_2.c...
+LESSON2_2.C(18): error C141: syntax error near ':'
+LESSON2_2.C(18): error C141: syntax error near ')'
+Target not created
+Build target 'Target 1'
+compiling lesson2_2.c...
+linking...
+Program Size: data=9.0 xdata=0 code=49
+"lesson2_2" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling lesson2_2.c...
+linking...
+Program Size: data=9.0 xdata=0 code=49
+"lesson2_2" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling lesson2_2.c...
+linking...
+Program Size: data=9.0 xdata=0 code=49
+"lesson2_2" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling lesson2_2.c...
+linking...
+Program Size: data=9.0 xdata=0 code=49
+"lesson2_2" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling lesson2_2.c...
+linking...
+Program Size: data=9.0 xdata=0 code=54
+"lesson2_2" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling lesson2_2.c...
+linking...
+Program Size: data=9.0 xdata=0 code=54
+"lesson2_2" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+assembling STARTUP.A51...
+compiling lesson2_2.c...
+linking...
+Program Size: data=9.0 xdata=0 code=54
+"lesson2_2" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling lesson2_2.c...
+LESSON2_2.C(19): warning C235: parameter 1: different types
+linking...
+Program Size: data=9.0 xdata=0 code=69
+"lesson2_2" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling lesson2_2.c...
+LESSON2_2.C(19): warning C235: parameter 1: different types
+linking...
+Program Size: data=9.0 xdata=0 code=65
+"lesson2_2" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling lesson2_2.c...
+LESSON2_2.C(19): warning C235: parameter 1: different types
+linking...
+Program Size: data=9.0 xdata=0 code=65
+"lesson2_2" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling lesson2_3.c...
+LESSON2_3.C(8): error C202: 'temp': undefined identifier
+LESSON2_3.C(9): error C202: 'temp': undefined identifier
+LESSON2_3.C(12): error C202: 'temp': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling lesson2_3.c...
+LESSON2_3.C(13): warning C206: '_crol_': missing function-prototype
+LESSON2_3.C(13): error C267: '_crol_': requires ANSI-style prototype
+Target not created
+Build target 'Target 1'
+compiling lesson2_3.c...
+LESSON2_3.C(14): warning C206: 'delay': missing function-prototype
+LESSON2_3.C(14): error C267: 'delay': requires ANSI-style prototype
+LESSON2_3.C(19): error C231: '_delay': redefinition
+Target not created
+Build target 'Target 1'
+compiling lesson2_3.c...
+LESSON2_3.C(19): warning C235: parameter 1: different types
+linking...
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  _DELAY
+    MODULE:  lesson2_3.obj (LESSON2_3)
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  MAIN
+    MODULE:  lesson2_3.obj (LESSON2_3)
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MAIN?LESSON2_3
+Program Size: data=10.0 xdata=0 code=123
+Target not created
+Build target 'Target 1'
+compiling lesson2_3.c...
+LESSON2_3.C(19): warning C235: parameter 1: different types
+linking...
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  _DELAY
+    MODULE:  lesson2_3.obj (LESSON2_3)
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  MAIN
+    MODULE:  lesson2_3.obj (LESSON2_3)
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MAIN?LESSON2_3
+Program Size: data=10.0 xdata=0 code=127
+Target not created
+Build target 'Target 1'
+compiling lesson2_3.c...
+LESSON2_3.C(19): warning C235: parameter 1: different types
+linking...
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  _DELAY
+    MODULE:  lesson2_3.obj (LESSON2_3)
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  MAIN
+    MODULE:  lesson2_3.obj (LESSON2_3)
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MAIN?LESSON2_3
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY?LESSON2_3
+Program Size: data=10.0 xdata=0 code=120
+Target not created
+Build target 'Target 1'
+compiling lesson2_3.c...
+LESSON2_3.C(19): warning C235: parameter 1: different types
+linking...
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  _DELAY
+    MODULE:  lesson2_3.obj (LESSON2_3)
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  MAIN
+    MODULE:  lesson2_3.obj (LESSON2_3)
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MAIN?LESSON2_3
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY?LESSON2_3
+Program Size: data=10.0 xdata=0 code=107
+Target not created
+Build target 'Target 1'
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY?LESSON2_3
+Program Size: data=10.0 xdata=0 code=57
+"lesson2_2" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+assembling STARTUP.A51...
+compiling lesson2_3.c...
+LESSON2_3.C(19): warning C235: parameter 1: different types
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY?LESSON2_3
+Program Size: data=10.0 xdata=0 code=57
+"lesson2_2" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY?LESSON2_3
+Program Size: data=10.0 xdata=0 code=57
+"lesson2_2" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling lesson2_3.c...
+LESSON2_3.C(19): warning C235: parameter 1: different types
+linking...
+Program Size: data=10.0 xdata=0 code=77
+"lesson2_2" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling lesson2_3.c...
+LESSON2_3.C(20): warning C235: parameter 1: different types
+linking...
+Program Size: data=10.0 xdata=0 code=77
+"lesson2_2" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling lesson2_3.c...
+LESSON2_3.C(21): warning C235: parameter 1: different types
+linking...
+Program Size: data=10.0 xdata=0 code=80
+"lesson2_2" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling lesson2_3.c...
+LESSON2_3.C(21): warning C235: parameter 1: different types
+linking...
+Program Size: data=10.0 xdata=0 code=80
+"lesson2_2" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+linking...
+Program Size: data=10.0 xdata=0 code=80
+"lesson2_2" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+linking...
+Program Size: data=10.0 xdata=0 code=80
+"lesson2_2" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling lesson2_3.c...
+LESSON2_3.C(21): warning C235: parameter 1: different types
+linking...
+Program Size: data=10.0 xdata=0 code=80
+creating hex file from "lesson2_2"...
+"lesson2_2" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling lesson2_3.c...
+LESSON2_3.C(22): warning C235: parameter 1: different types
+linking...
+Program Size: data=10.0 xdata=0 code=82
+creating hex file from "lesson2_2"...
+"lesson2_2" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+assembling STARTUP.A51...
+compiling lesson2_3.c...
+LESSON2_3.C(22): warning C235: parameter 1: different types
+linking...
+Program Size: data=10.0 xdata=0 code=82
+creating hex file from "lesson2_2"...
+"lesson2_2" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+assembling STARTUP.A51...
+compiling lesson2_3.c...
+LESSON2_3.C(22): warning C235: parameter 1: different types
+linking...
+Program Size: data=10.0 xdata=0 code=82
+creating hex file from "lesson2_2"...
+"lesson2_2" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+assembling STARTUP.A51...
+compiling lesson2_3.c...
+LESSON2_3.C(22): warning C235: parameter 1: different types
+linking...
+Program Size: data=10.0 xdata=0 code=82
+creating hex file from "lesson2_2"...
+"lesson2_2" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+assembling STARTUP.A51...
+compiling lesson2_3.c...
+LESSON2_3.C(4): error C129: missing ';' before 'temp'
+Target not created
+Build target 'Target 1'
+assembling STARTUP.A51...
+compiling lesson2_3.c...
+LESSON2_3.C(22): warning C235: parameter 1: different types
+linking...
+Program Size: data=10.0 xdata=0 code=82
+creating hex file from "lesson2_2"...
+"lesson2_2" - 0 Error(s), 1 Warning(s).
+</pre>
+</body>
+</html>

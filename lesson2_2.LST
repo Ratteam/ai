@@ -1,0 +1,48 @@
+C51 COMPILER V7.06   LESSON2_2                                                             05/24/2020 15:59:09 PAGE 1   
+
+
+C51 COMPILER V7.06, COMPILATION OF MODULE LESSON2_2
+OBJECT MODULE PLACED IN lesson2_2.OBJ
+COMPILER INVOKED BY: D:\Keil\C51\BIN\C51.EXE lesson2_2.c BROWSE DEBUG OBJECTEXTEND
+
+stmt level    source
+
+   1          #include<reg52.h>
+   2          #define uint unsigned int
+   3          #define uchar unsigned char
+   4          sbit D1=P1^0;
+   5          //void delay();
+   6          void delay(uint);
+   7          void main()
+   8          {
+   9   1              while(1)
+  10   1              {
+  11   2                      D1=0;
+  12   2                      delay(100); 
+  13   2                      D1=1;
+  14   2                      delay(100); 
+  15   2              }
+  16   1      }
+  17          
+  18          void delay(z)
+  19          {
+*** WARNING C235 IN LINE 19 OF LESSON2_2.C: parameter 1: different types
+  20   1              uint x,y;
+  21   1              for(x=z;x>0;x--)
+  22   1                      for(y=120;y>0;y--);
+  23   1      
+  24   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     50    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  1 WARNING(S),  0 ERROR(S)

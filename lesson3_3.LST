@@ -1,0 +1,64 @@
+C51 COMPILER V7.06   LESSON3_3                                                             05/31/2020 12:41:12 PAGE 1   
+
+
+C51 COMPILER V7.06, COMPILATION OF MODULE LESSON3_3
+OBJECT MODULE PLACED IN lesson3_3.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE lesson3_3.c BROWSE DEBUG OBJECTEXTEND
+
+stmt level    source
+
+   1          #include<reg52.h>
+   2          #define uint unsigned int
+   3          #define uchar unsigned char
+   4          sbit dula=P2^6;
+   5          sbit wela=P2^7;
+   6          sbit d1=P1^0;
+   7          uchar num;
+   8          uchar code table[]={
+   9          0x3f,0x06,0x5b,0x4f,
+  10          0x66,0x6d,0x7d,0x07,
+  11          0x7f,0x6f,0x77,0x7c,
+  12          0x39,0x5e,0x79,0x71};
+  13          void delay(uint z);
+  14          void main()
+  15          {
+  16   1              EA=1;// 开总终中断
+  17   1              EX0=1;//开外部中断
+  18   1              wela=1;
+  19   1              P0=0xea;
+  20   1              wela=0;
+  21   1              while(1)
+  22   1              {
+  23   2                      for(num=0;num<16;num++)
+  24   2                      {
+  25   3                              dula=1;
+  26   3                              P0=table[num];
+  27   3                              dula=0;
+  28   3                              delay(1000);
+  29   3                      }
+  30   2              }
+  31   1      }
+  32          void delay(uint z)
+  33          {
+  34   1              uint x,y;
+  35   1              for(x=z;x>0;x--)
+  36   1                      for(y=110;y>0;y--);
+  37   1      }
+  38          void exter0() interrupt 0
+  39          {
+  40   1              d1=0;
+  41   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     77    ----
+   CONSTANT SIZE    =     16    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      1    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
