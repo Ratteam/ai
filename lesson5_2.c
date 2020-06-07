@@ -30,7 +30,7 @@ void main()
 		delay(10);
 		if(key1==0)
 		{
-			delay(10);
+			delay(5);
 			if(key1==0)
 			{
 				d1=0;
@@ -40,7 +40,7 @@ void main()
 					num=0;	
 				}
 				while(!key1); // À… ÷ºÏ≤‚	
-				delay(10);
+				delay(5);
 				while(!key1); // À… ÷ºÏ≤‚
 			}
 		}else
