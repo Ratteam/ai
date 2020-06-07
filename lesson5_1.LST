@@ -1,0 +1,158 @@
+C51 COMPILER V7.06   LESSON5_1                                                             06/07/2020 11:08:56 PAGE 1   
+
+
+C51 COMPILER V7.06, COMPILATION OF MODULE LESSON5_1
+OBJECT MODULE PLACED IN lesson5_1.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE lesson5_1.c BROWSE DEBUG OBJECTEXTEND
+
+stmt level    source
+
+   1          #include <reg52.h>
+   2          #include <intrins.h>
+   3          #define uchar unsigned char
+   4          #define uint unsigned int
+   5          sbit dula=P2^6;
+   6          sbit wela=P2^7;
+   7          uchar code table[]={
+   8          0x3f,0x06,0x5b,0x4f,
+   9          0x66,0x6d,0x7d,0x07,
+  10          0x7f,0x6f,0x77,0x7c,
+  11          0x39,0x5e,0x79,0x71};
+  12          uchar temp,t0,t1,bai,shi,ge;
+  13          uint shu;
+  14          void delay(uint z)
+  15          {
+  16   1              uint x,y;
+  17   1              for(x=z;x>0;x--)
+  18   1                      for(y=110;y>0;y--);
+  19   1      }
+  20          void dispaly(uchar aa,uchar bb,uchar cc,uchar bai,uchar shi,uchar ge)
+  21          {
+  22   1              dula=1;
+  23   1              P0=table[aa];
+  24   1              dula=0;
+  25   1              P0=0xff;
+  26   1              wela=1;
+  27   1              P0=0xfe;
+  28   1              wela=0;
+  29   1              delay(1); 
+  30   1      
+  31   1              dula=1;
+  32   1              P0=table[bb];
+  33   1              dula=0;
+  34   1              P0=0xff;
+  35   1              wela=1;
+  36   1              P0=0xfd;
+  37   1              wela=0;
+  38   1              delay(1);
+  39   1      
+  40   1              dula=1;
+  41   1              P0=table[cc];
+  42   1              dula=0;
+  43   1              P0=0xff;
+  44   1              wela=1;
+  45   1              P0=0xfb;
+  46   1              wela=0;
+  47   1              delay(1);
+  48   1      
+  49   1              dula=1;
+  50   1              P0=table[bai];
+  51   1              dula=0;
+  52   1              P0=0xff;
+  53   1              wela=1;
+  54   1              P0=0xf7;
+  55   1              wela=0;
+C51 COMPILER V7.06   LESSON5_1                                                             06/07/2020 11:08:56 PAGE 2   
+
+  56   1              delay(1); 
+  57   1      
+  58   1              dula=1;
+  59   1              P0=table[shi];
+  60   1              dula=0;
+  61   1              P0=0xff;
+  62   1              wela=1;
+  63   1              P0=0xef;
+  64   1              wela=0;
+  65   1              delay(1);
+  66   1      
+  67   1              dula=1;
+  68   1              P0=table[ge];
+  69   1              dula=0;
+  70   1              P0=0xff;
+  71   1              wela=1;
+  72   1              P0=0xdf;
+  73   1              wela=0;
+  74   1              delay(1);       
+  75   1      }
+  76          
+  77          void timer1() interrupt 3
+  78          {
+  79   1              TH1=(65536-50000)/256;
+  80   1              TL1=(65536-50000)%256;
+  81   1              t1++;
+  82   1              if(t1==2)
+  83   1              {
+  84   2                      t1=0;
+  85   2                      shu--;
+  86   2                      bai=shu/100;
+  87   2                      shi=shu%100/10;
+  88   2                      ge=shu%10;
+  89   2                      if(shu==398)
+  90   2                      {
+  91   3                              TR0=0;
+  92   3                              TR1=0;
+  93   3                      }
+  94   2              }
+  95   1      }
+  96          void timer0() interrupt 1
+  97          {
+  98   1              TH0=(65536-50000)/256;
+  99   1              TL0=(65536-50000)%256;
+ 100   1              t0++;
+ 101   1              if(t0==10)
+ 102   1              {
+ 103   2                      t0=1;
+ 104   2                      temp=_crol_(temp,1);
+ 105   2                      P1=temp;
+ 106   2              }
+ 107   1      }
+ 108          void init()
+ 109          {
+ 110   1              shu=432;
+ 111   1              temp=0xfe;
+ 112   1              P1=temp;
+ 113   1              TMOD=0x11;
+ 114   1              TH0=(65536-50000)/256;
+ 115   1              TL0=(65536-50000)%256;
+ 116   1              TH1=(65536-50000)/256;
+ 117   1              TL1=(65536-50000)%256;
+C51 COMPILER V7.06   LESSON5_1                                                             06/07/2020 11:08:56 PAGE 3   
+
+ 118   1              EA=1;
+ 119   1              ET0=1;
+ 120   1              ET1=1;
+ 121   1              TR0=1;
+ 122   1              TR1=1;
+ 123   1      }
+ 124          void main()
+ 125          {
+ 126   1              init();
+ 127   1              while(1)
+ 128   1              {
+ 129   2                      dispaly(7,6,7,bai,shi,ge);
+ 130   2              }
+ 131   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    402    ----
+   CONSTANT SIZE    =     16    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      8       6
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
