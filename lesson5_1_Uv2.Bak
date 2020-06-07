@@ -25,7 +25,7 @@ Options 1,0,0  // Target 'Target 1'
  EnvLib ()
  EnvReg (ÿAtmel\)
  OrgReg (ÿAtmel\)
- TgStat=8
+ TgStat=9
  OutDir (.\)
  OutName (lesson5_1)
  GenApp=1

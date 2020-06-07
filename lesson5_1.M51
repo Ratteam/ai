@@ -1,8 +1,8 @@
-BL51 BANKED LINKER/LOCATER V5.03                                                        06/07/2020  11:08:56  PAGE 1
+BL51 BANKED LINKER/LOCATER V5.03                                                        06/07/2020  12:53:38  PAGE 1
 
 
 BL51 BANKED LINKER/LOCATER V5.03, INVOKED BY:
-C:\KEIL\C51\BIN\BL51.EXE .\STARTUP.obj, lesson5_1.obj TO lesson5_1 RAMSIZE (256)
+C:\KEIL\C51\BIN\BL51.EXE .\STARTUP.obj, lesson5_2.obj TO lesson5_1 RAMSIZE (256)
 
 
 MEMORY MODEL: SMALL
@@ -10,8 +10,7 @@ MEMORY MODEL: SMALL
 
 INPUT MODULES INCLUDED:
   .\STARTUP.obj (?C_STARTUP)
-  lesson5_1.obj (LESSON5_1)
-  C:\KEIL\C51\LIB\C51S.LIB (?C?UIDIV)
+  lesson5_2.obj (LESSON5_2)
 
 
 LINK MAP OF MODULE:  lesson5_1 (?C_STARTUP)
@@ -22,47 +21,23 @@ LINK MAP OF MODULE:  lesson5_1 (?C_STARTUP)
 
             * * * * * * *   D A T A   M E M O R Y   * * * * * * *
             REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
-            DATA    0008H     0008H     UNIT         ?DT?LESSON5_1
-            DATA    0010H     0006H     UNIT         _DATA_GROUP_
-            IDATA   0016H     0001H     UNIT         ?STACK
+            IDATA   0008H     0001H     UNIT         ?STACK
 
             * * * * * * *   C O D E   M E M O R Y   * * * * * * *
             CODE    0000H     0003H     ABSOLUTE     
-                    0003H     0008H                  *** GAP ***
-            CODE    000BH     0003H     ABSOLUTE     
-            CODE    000EH     000CH     UNIT         ?C_C51STARTUP
-                    001AH     0001H                  *** GAP ***
-            CODE    001BH     0003H     ABSOLUTE     
-            CODE    001EH     0080H     UNIT         ?PR?_DISPALY?LESSON5_1
-            CODE    009EH     007EH     UNIT         ?PR?TIMER1?LESSON5_1
-            CODE    011CH     0055H     UNIT         ?C?LIB_CODE
-            CODE    0171H     0033H     UNIT         ?PR?TIMER0?LESSON5_1
-            CODE    01A4H     0026H     UNIT         ?PR?INIT?LESSON5_1
-            CODE    01CAH     0024H     UNIT         ?PR?_DELAY?LESSON5_1
-            CODE    01EEH     0017H     UNIT         ?PR?MAIN?LESSON5_1
-            CODE    0205H     0010H     UNIT         ?CO?LESSON5_1
+            CODE    0003H     000EH     UNIT         ?PR?MAIN?LESSON5_2
+            CODE    0011H     000CH     UNIT         ?C_C51STARTUP
 
 
 
 OVERLAY MAP OF MODULE:   lesson5_1 (?C_STARTUP)
 
 
-SEGMENT                          DATA_GROUP 
-  +--> CALLED SEGMENT          START    LENGTH
-----------------------------------------------
-?C_C51STARTUP                  -----    -----
-  +--> ?PR?MAIN?LESSON5_1
-
-?PR?MAIN?LESSON5_1             -----    -----
-  +--> ?PR?INIT?LESSON5_1
-  +--> ?PR?_DISPALY?LESSON5_1
-
-?PR?_DISPALY?LESSON5_1         0010H    0006H
-  +--> ?CO?LESSON5_1
-BL51 BANKED LINKER/LOCATER V5.03                                                      06/07/2020  11:08:56  PAGE 2
-
-
-  +--> ?PR?_DELAY?LESSON5_1
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?LESSON5_2
 
 
 
@@ -72,8 +47,8 @@ SYMBOL TABLE OF MODULE:  lesson5_1 (?C_STARTUP)
   ----------------------------------
 
   -------         MODULE        ?C_STARTUP
-  C:000EH         SEGMENT       ?C_C51STARTUP
-  I:0016H         SEGMENT       ?STACK
+  C:0011H         SEGMENT       ?C_C51STARTUP
+  I:0008H         SEGMENT       ?STACK
   C:0000H         PUBLIC        ?C_STARTUP
   D:00E0H         SYMBOL        ACC
   D:00F0H         SYMBOL        B
@@ -82,8 +57,11 @@ SYMBOL TABLE OF MODULE:  lesson5_1 (?C_STARTUP)
   N:0000H         SYMBOL        IBPSTACK
   N:0100H         SYMBOL        IBPSTACKTOP
   N:0080H         SYMBOL        IDATALEN
-  C:0011H         SYMBOL        IDATALOOP
+  C:0014H         SYMBOL        IDATALOOP
   N:0000H         SYMBOL        PBPSTACK
+BL51 BANKED LINKER/LOCATER V5.03                                                      06/07/2020  12:53:38  PAGE 2
+
+
   N:0000H         SYMBOL        PBPSTACKTOP
   N:0000H         SYMBOL        PDATALEN
   N:0000H         SYMBOL        PDATASTART
@@ -91,206 +69,49 @@ SYMBOL TABLE OF MODULE:  lesson5_1 (?C_STARTUP)
   N:0000H         SYMBOL        PPAGEENABLE
   D:00A0H         SYMBOL        PPAGE_SFR
   D:0081H         SYMBOL        SP
-  C:000EH         SYMBOL        STARTUP1
+  C:0011H         SYMBOL        STARTUP1
   N:0000H         SYMBOL        XBPSTACK
   N:0000H         SYMBOL        XBPSTACKTOP
   N:0000H         SYMBOL        XDATALEN
   N:0000H         SYMBOL        XDATASTART
   C:0000H         LINE#         92
-  C:000EH         LINE#         99
-  C:0010H         LINE#         100
-  C:0011H         LINE#         101
-  C:0012H         LINE#         102
-  C:0014H         LINE#         151
-  C:0017H         LINE#         155
+  C:0011H         LINE#         99
+  C:0013H         LINE#         100
+  C:0014H         LINE#         101
+  C:0015H         LINE#         102
+  C:0017H         LINE#         151
+  C:001AH         LINE#         155
   -------         ENDMOD        ?C_STARTUP
 
-  -------         MODULE        LESSON5_1
+  -------         MODULE        LESSON5_2
   C:0000H         SYMBOL        _ICE_DUMMY_
-  D:0080H         PUBLIC        P0
   D:0090H         PUBLIC        P1
-  D:00A0H         PUBLIC        P2
   D:00B0H         PUBLIC        P3
-  B:00A8H.7       PUBLIC        EA
-  C:0205H         PUBLIC        table
   D:00A8H         PUBLIC        IE
+  B:0090H.0       PUBLIC        d1
   D:00B8H         PUBLIC        IP
-  D:0008H         PUBLIC        t0
-  D:0009H         PUBLIC        t1
-  C:01EEH         PUBLIC        main
-  B:00A0H.6       PUBLIC        dula
-BL51 BANKED LINKER/LOCATER V5.03                                                      06/07/2020  11:08:56  PAGE 3
-
-
-  B:00A0H.7       PUBLIC        wela
-  D:000AH         PUBLIC        bai
+  C:0003H         PUBLIC        main
   D:0098H         PUBLIC        SCON
-  D:0089H         PUBLIC        TMOD
   D:0088H         PUBLIC        TCON
-  C:01A4H         PUBLIC        init
-  D:000BH         PUBLIC        temp
-  D:000CH         PUBLIC        shi
-  B:00A8H.1       PUBLIC        ET0
-  B:00A8H.3       PUBLIC        ET1
-  D:000DH         PUBLIC        ge
-  D:008CH         PUBLIC        TH0
-  D:008DH         PUBLIC        TH1
-  D:008AH         PUBLIC        TL0
-  D:000EH         PUBLIC        shu
-  D:008BH         PUBLIC        TL1
-  C:0171H         PUBLIC        timer0
-  C:009EH         PUBLIC        timer1
-  B:0088H.4       PUBLIC        TR0
-  B:0088H.6       PUBLIC        TR1
-  C:001EH         PUBLIC        _dispaly
   D:00C8H         PUBLIC        T2CON
-  C:01D0H         PUBLIC        _delay
   D:00D0H         PUBLIC        PSW
-  C:01CAH         SYMBOL        L?0025
-  -------         PROC          L?0024
-  -------         ENDPROC       L?0024
-  C:01CAH         SYMBOL        L?0025
-  -------         PROC          _DELAY
-  D:0006H         SYMBOL        z
-  -------         DO            
-  D:0006H         SYMBOL        x
-  D:0004H         SYMBOL        y
-  -------         ENDDO         
-  C:01D0H         LINE#         14
-  C:01D0H         LINE#         15
-  C:01D0H         LINE#         17
-  C:01D9H         LINE#         18
-  C:01EDH         LINE#         19
-  -------         ENDPROC       _DELAY
-  -------         PROC          _DISPALY
-  D:0007H         SYMBOL        aa
-  D:0002H         SYMBOL        bb
-  D:0003H         SYMBOL        cc
-  D:0013H         SYMBOL        bai
-  D:0014H         SYMBOL        shi
-  D:0015H         SYMBOL        ge
-  C:001EH         LINE#         20
-  C:0020H         LINE#         21
-  C:0020H         LINE#         22
-  C:0022H         LINE#         23
-  C:0029H         LINE#         24
-  C:002BH         LINE#         25
-  C:002EH         LINE#         26
-  C:0030H         LINE#         27
-  C:0033H         LINE#         28
-  C:0033H         LINE#         29
-BL51 BANKED LINKER/LOCATER V5.03                                                      06/07/2020  11:08:56  PAGE 4
-
-
-  C:0036H         LINE#         31
-  C:0038H         LINE#         32
-  C:003CH         LINE#         33
-  C:003EH         LINE#         34
-  C:0041H         LINE#         35
-  C:0043H         LINE#         36
-  C:0046H         LINE#         37
-  C:0046H         LINE#         38
-  C:0049H         LINE#         40
-  C:004BH         LINE#         41
-  C:004FH         LINE#         42
-  C:0051H         LINE#         43
-  C:0054H         LINE#         44
-  C:0056H         LINE#         45
-  C:0059H         LINE#         46
-  C:0059H         LINE#         47
-  C:005CH         LINE#         49
-  C:005EH         LINE#         50
-  C:0063H         LINE#         51
-  C:0065H         LINE#         52
-  C:0068H         LINE#         53
-  C:006AH         LINE#         54
-  C:006DH         LINE#         55
-  C:006DH         LINE#         56
-  C:0070H         LINE#         58
-  C:0072H         LINE#         59
-  C:0077H         LINE#         60
-  C:0079H         LINE#         61
-  C:007CH         LINE#         62
-  C:007EH         LINE#         63
-  C:0081H         LINE#         64
-  C:0081H         LINE#         65
-  C:0084H         LINE#         67
-  C:0086H         LINE#         68
-  C:008BH         LINE#         69
-  C:008DH         LINE#         70
-  C:0090H         LINE#         71
-  C:0092H         LINE#         72
-  C:0095H         LINE#         73
-  C:0097H         LINE#         74
-  -------         ENDPROC       _DISPALY
-  -------         PROC          TIMER1
-  C:009EH         LINE#         77
-  C:00B1H         LINE#         79
-  C:00B4H         LINE#         80
-  C:00B7H         LINE#         81
-  C:00B9H         LINE#         82
-  C:00BFH         LINE#         83
-  C:00BFH         LINE#         84
-  C:00C1H         LINE#         85
-  C:00C9H         LINE#         86
-  C:00D6H         LINE#         87
-  C:00F0H         LINE#         88
-  C:00FDH         LINE#         89
-  C:0107H         LINE#         90
-  C:0107H         LINE#         91
-  C:0109H         LINE#         92
-BL51 BANKED LINKER/LOCATER V5.03                                                      06/07/2020  11:08:56  PAGE 5
-
-
-  C:010BH         LINE#         93
-  C:010BH         LINE#         94
-  C:010BH         LINE#         95
-  -------         ENDPROC       TIMER1
-  -------         PROC          TIMER0
-  C:0171H         LINE#         96
-  C:017CH         LINE#         98
-  C:017FH         LINE#         99
-  C:0182H         LINE#         100
-  C:0184H         LINE#         101
-  C:0189H         LINE#         102
-  C:0189H         LINE#         103
-  C:018CH         LINE#         104
-  C:0199H         LINE#         105
-  C:019BH         LINE#         106
-  C:019BH         LINE#         107
-  -------         ENDPROC       TIMER0
-  -------         PROC          INIT
-  C:01A4H         LINE#         108
-  C:01A4H         LINE#         109
-  C:01A4H         LINE#         110
-  C:01AAH         LINE#         111
-  C:01ADH         LINE#         112
-  C:01B0H         LINE#         113
-  C:01B3H         LINE#         114
-  C:01B6H         LINE#         115
-  C:01B9H         LINE#         116
-  C:01BCH         LINE#         117
-  C:01BFH         LINE#         118
-  C:01C1H         LINE#         119
-  C:01C3H         LINE#         120
-  C:01C5H         LINE#         121
-  C:01C7H         LINE#         122
-  C:01C9H         LINE#         123
-  -------         ENDPROC       INIT
+  B:00B0H.4       PUBLIC        key1
   -------         PROC          MAIN
-  C:01EEH         LINE#         124
-  C:01EEH         LINE#         125
-  C:01EEH         LINE#         126
-  C:01F1H         LINE#         127
-  C:01F1H         LINE#         128
-  C:01F1H         LINE#         129
-  C:0203H         LINE#         130
+  C:0003H         LINE#         5
+  C:0003H         LINE#         6
+  C:0003H         LINE#         7
+  C:0006H         LINE#         8
+  C:0006H         LINE#         9
+  C:0006H         LINE#         10
+  C:0009H         LINE#         11
+  C:0009H         LINE#         12
+  C:000BH         LINE#         13
+  C:000DH         LINE#         14
+  C:000DH         LINE#         15
+  C:000FH         LINE#         16
+  C:000FH         LINE#         17
   -------         ENDPROC       MAIN
-  -------         ENDMOD        LESSON5_1
+  -------         ENDMOD        LESSON5_2
 
-  -------         MODULE        ?C?UIDIV
-  C:011CH         PUBLIC        ?C?UIDIV
-  -------         ENDMOD        ?C?UIDIV
-
-Program Size: data=23.0 xdata=0 code=524
+Program Size: data=9.0 xdata=0 code=29
 LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

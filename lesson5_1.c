@@ -8,8 +8,9 @@ uchar code table[]={
 0x3f,0x06,0x5b,0x4f,
 0x66,0x6d,0x7d,0x07,
 0x7f,0x6f,0x77,0x7c,
-0x39,0x5e,0x79,0x71};
-uchar temp,t0,t1,bai,shi,ge;
+0x39,0x5e,0x79,0x71,
+0x36,0x79,0x38,0x3f};
+uchar temp,t0,t1,bai,shi,ge,flag,flag1;
 uint shu;
 void delay(uint z)
 {
@@ -89,6 +90,11 @@ void timer1() interrupt 3
 		if(shu==398)
 		{
 			TR0=0;
+			TH0=(65536-50000)/256;
+			TL0=(65536-50000)%256;
+			TR0=1;
+			flag=1;
+			P1=0xff;// 关闭所有流水灯
 			TR1=0;
 		}
 	}
@@ -98,11 +104,25 @@ void timer0() interrupt 1
 	TH0=(65536-50000)/256;
 	TL0=(65536-50000)%256;
 	t0++;
-	if(t0==10)
+	if(flag!=1)
 	{
-		t0=1;
-		temp=_crol_(temp,1);
-		P1=temp;
+		if(t0==10)
+		{
+			t0=1;
+			temp=_crol_(temp,1);
+			P1=temp;
+		}
+	}else{
+		if(t0%4==0)
+		{
+			P1=~P1;
+		}
+		if(t0==60)
+		{
+			TR0=0;
+			P1=0xff;
+			flag1=1;
+		}
 	}
 }
 void init()
@@ -126,6 +146,14 @@ void main()
 	init();
 	while(1)
 	{
-		dispaly(7,6,7,bai,shi,ge);
+		if(flag1!=1)
+		{
+			dispaly(7,6,7,bai,shi,ge);		
+		}else
+		{
+			dispaly(16,17,18,18,19,20);
+		}
+		
 	}
 }
+

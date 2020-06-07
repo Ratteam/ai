@@ -1,4 +1,4 @@
-C51 COMPILER V7.06   LESSON5_1                                                             06/07/2020 11:08:56 PAGE 1   
+C51 COMPILER V7.06   LESSON5_1                                                             06/07/2020 11:58:39 PAGE 1   
 
 
 C51 COMPILER V7.06, COMPILATION OF MODULE LESSON5_1
@@ -17,139 +17,166 @@ stmt level    source
    8          0x3f,0x06,0x5b,0x4f,
    9          0x66,0x6d,0x7d,0x07,
   10          0x7f,0x6f,0x77,0x7c,
-  11          0x39,0x5e,0x79,0x71};
-  12          uchar temp,t0,t1,bai,shi,ge;
-  13          uint shu;
-  14          void delay(uint z)
-  15          {
-  16   1              uint x,y;
-  17   1              for(x=z;x>0;x--)
-  18   1                      for(y=110;y>0;y--);
-  19   1      }
-  20          void dispaly(uchar aa,uchar bb,uchar cc,uchar bai,uchar shi,uchar ge)
-  21          {
-  22   1              dula=1;
-  23   1              P0=table[aa];
-  24   1              dula=0;
-  25   1              P0=0xff;
-  26   1              wela=1;
-  27   1              P0=0xfe;
-  28   1              wela=0;
-  29   1              delay(1); 
-  30   1      
-  31   1              dula=1;
-  32   1              P0=table[bb];
-  33   1              dula=0;
-  34   1              P0=0xff;
-  35   1              wela=1;
-  36   1              P0=0xfd;
-  37   1              wela=0;
-  38   1              delay(1);
-  39   1      
-  40   1              dula=1;
-  41   1              P0=table[cc];
-  42   1              dula=0;
-  43   1              P0=0xff;
-  44   1              wela=1;
-  45   1              P0=0xfb;
-  46   1              wela=0;
-  47   1              delay(1);
-  48   1      
-  49   1              dula=1;
-  50   1              P0=table[bai];
-  51   1              dula=0;
-  52   1              P0=0xff;
-  53   1              wela=1;
-  54   1              P0=0xf7;
-  55   1              wela=0;
-C51 COMPILER V7.06   LESSON5_1                                                             06/07/2020 11:08:56 PAGE 2   
+  11          0x39,0x5e,0x79,0x71,
+  12          0x36,0x79,0x38,0x3f};
+  13          uchar temp,t0,t1,bai,shi,ge,flag,flag1;
+  14          uint shu;
+  15          void delay(uint z)
+  16          {
+  17   1              uint x,y;
+  18   1              for(x=z;x>0;x--)
+  19   1                      for(y=110;y>0;y--);
+  20   1      }
+  21          void dispaly(uchar aa,uchar bb,uchar cc,uchar bai,uchar shi,uchar ge)
+  22          {
+  23   1              dula=1;
+  24   1              P0=table[aa];
+  25   1              dula=0;
+  26   1              P0=0xff;
+  27   1              wela=1;
+  28   1              P0=0xfe;
+  29   1              wela=0;
+  30   1              delay(1); 
+  31   1      
+  32   1              dula=1;
+  33   1              P0=table[bb];
+  34   1              dula=0;
+  35   1              P0=0xff;
+  36   1              wela=1;
+  37   1              P0=0xfd;
+  38   1              wela=0;
+  39   1              delay(1);
+  40   1      
+  41   1              dula=1;
+  42   1              P0=table[cc];
+  43   1              dula=0;
+  44   1              P0=0xff;
+  45   1              wela=1;
+  46   1              P0=0xfb;
+  47   1              wela=0;
+  48   1              delay(1);
+  49   1      
+  50   1              dula=1;
+  51   1              P0=table[bai];
+  52   1              dula=0;
+  53   1              P0=0xff;
+  54   1              wela=1;
+  55   1              P0=0xf7;
+C51 COMPILER V7.06   LESSON5_1                                                             06/07/2020 11:58:39 PAGE 2   
 
-  56   1              delay(1); 
-  57   1      
-  58   1              dula=1;
-  59   1              P0=table[shi];
-  60   1              dula=0;
-  61   1              P0=0xff;
-  62   1              wela=1;
-  63   1              P0=0xef;
-  64   1              wela=0;
-  65   1              delay(1);
-  66   1      
-  67   1              dula=1;
-  68   1              P0=table[ge];
-  69   1              dula=0;
-  70   1              P0=0xff;
-  71   1              wela=1;
-  72   1              P0=0xdf;
-  73   1              wela=0;
-  74   1              delay(1);       
-  75   1      }
-  76          
-  77          void timer1() interrupt 3
-  78          {
-  79   1              TH1=(65536-50000)/256;
-  80   1              TL1=(65536-50000)%256;
-  81   1              t1++;
-  82   1              if(t1==2)
-  83   1              {
-  84   2                      t1=0;
-  85   2                      shu--;
-  86   2                      bai=shu/100;
-  87   2                      shi=shu%100/10;
-  88   2                      ge=shu%10;
-  89   2                      if(shu==398)
-  90   2                      {
-  91   3                              TR0=0;
-  92   3                              TR1=0;
-  93   3                      }
-  94   2              }
-  95   1      }
-  96          void timer0() interrupt 1
-  97          {
-  98   1              TH0=(65536-50000)/256;
-  99   1              TL0=(65536-50000)%256;
- 100   1              t0++;
- 101   1              if(t0==10)
- 102   1              {
- 103   2                      t0=1;
- 104   2                      temp=_crol_(temp,1);
- 105   2                      P1=temp;
- 106   2              }
- 107   1      }
- 108          void init()
- 109          {
- 110   1              shu=432;
- 111   1              temp=0xfe;
- 112   1              P1=temp;
- 113   1              TMOD=0x11;
- 114   1              TH0=(65536-50000)/256;
- 115   1              TL0=(65536-50000)%256;
- 116   1              TH1=(65536-50000)/256;
- 117   1              TL1=(65536-50000)%256;
-C51 COMPILER V7.06   LESSON5_1                                                             06/07/2020 11:08:56 PAGE 3   
+  56   1              wela=0;
+  57   1              delay(1); 
+  58   1      
+  59   1              dula=1;
+  60   1              P0=table[shi];
+  61   1              dula=0;
+  62   1              P0=0xff;
+  63   1              wela=1;
+  64   1              P0=0xef;
+  65   1              wela=0;
+  66   1              delay(1);
+  67   1      
+  68   1              dula=1;
+  69   1              P0=table[ge];
+  70   1              dula=0;
+  71   1              P0=0xff;
+  72   1              wela=1;
+  73   1              P0=0xdf;
+  74   1              wela=0;
+  75   1              delay(1);       
+  76   1      }
+  77          
+  78          void timer1() interrupt 3
+  79          {
+  80   1              TH1=(65536-50000)/256;
+  81   1              TL1=(65536-50000)%256;
+  82   1              t1++;
+  83   1              if(t1==2)
+  84   1              {
+  85   2                      t1=0;
+  86   2                      shu--;
+  87   2                      bai=shu/100;
+  88   2                      shi=shu%100/10;
+  89   2                      ge=shu%10;
+  90   2                      if(shu==398)
+  91   2                      {
+  92   3                              TR0=0;
+  93   3                              TH0=(65536-50000)/256;
+  94   3                              TL0=(65536-50000)%256;
+  95   3                              TR0=1;
+  96   3                              flag=1;
+  97   3                              P1=0xff;// 关闭所有流水灯
+  98   3                              TR1=0;
+  99   3                      }
+ 100   2              }
+ 101   1      }
+ 102          void timer0() interrupt 1
+ 103          {
+ 104   1              TH0=(65536-50000)/256;
+ 105   1              TL0=(65536-50000)%256;
+ 106   1              t0++;
+ 107   1              if(flag!=1)
+ 108   1              {
+ 109   2                      if(t0==10)
+ 110   2                      {
+ 111   3                              t0=1;
+ 112   3                              temp=_crol_(temp,1);
+ 113   3                              P1=temp;
+ 114   3                      }
+ 115   2              }else{
+ 116   2                      if(t0%4==0)
+ 117   2                      {
+C51 COMPILER V7.06   LESSON5_1                                                             06/07/2020 11:58:39 PAGE 3   
 
- 118   1              EA=1;
- 119   1              ET0=1;
- 120   1              ET1=1;
- 121   1              TR0=1;
- 122   1              TR1=1;
- 123   1      }
- 124          void main()
- 125          {
- 126   1              init();
- 127   1              while(1)
- 128   1              {
- 129   2                      dispaly(7,6,7,bai,shi,ge);
- 130   2              }
- 131   1      }
+ 118   3                              P1=~P1;
+ 119   3                      }
+ 120   2                      if(t0==60)
+ 121   2                      {
+ 122   3                              TR0=0;
+ 123   3                              P1=0xff;
+ 124   3                              flag1=1;
+ 125   3                      }
+ 126   2              }
+ 127   1      }
+ 128          void init()
+ 129          {
+ 130   1              shu=432;
+ 131   1              temp=0xfe;
+ 132   1              P1=temp;
+ 133   1              TMOD=0x11;
+ 134   1              TH0=(65536-50000)/256;
+ 135   1              TL0=(65536-50000)%256;
+ 136   1              TH1=(65536-50000)/256;
+ 137   1              TL1=(65536-50000)%256;
+ 138   1              EA=1;
+ 139   1              ET0=1;
+ 140   1              ET1=1;
+ 141   1              TR0=1;
+ 142   1              TR1=1;
+ 143   1      }
+ 144          void main()
+ 145          {
+ 146   1              init();
+ 147   1              while(1)
+ 148   1              {
+ 149   2                      if(flag1!=1)
+ 150   2                      {
+ 151   3                              dispaly(7,6,7,bai,shi,ge);              
+ 152   3                      }else
+ 153   2                      {
+ 154   3                              dispaly(16,17,18,18,19,20);
+ 155   3                      }
+ 156   2                      
+ 157   2              }
+ 158   1      }
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    402    ----
-   CONSTANT SIZE    =     16    ----
+   CODE SIZE        =    473    ----
+   CONSTANT SIZE    =     20    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----
-   DATA SIZE        =      8       6
+   DATA SIZE        =     10       6
    IDATA SIZE       =   ----    ----
    BIT SIZE         =   ----    ----
 END OF MODULE INFORMATION.
